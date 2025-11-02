@@ -1,5 +1,12 @@
+import { Catalog } from "./pages/catalog";
+
 function App() {
-  return <></>;
+  return (
+    <main>
+      <h1>Онлайн библиотека</h1>
+      <Catalog />
+    </main>
+  );
 }
 
 export default App;
