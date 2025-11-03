@@ -1,0 +1,45 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 300px;
+  height: 350px;
+  padding: 18px;
+  box-sizing: border-box;
+  border: 1px solid #797b7d;
+  border-radius: 10px;
+}
+
+.card__title {
+  margin: 0 0 10px;
+  font-size: 20px;
+}
+
+.card__link {
+  color: #000;
+  text-decoration: none;
+}
+
+.card__link:hover {
+  color: #4b4c4c;
+  text-decoration: underline;
+}
+
+.card__meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.button {
+  height: 26px;
+  background-color: #fff;
+  border: 1px solid #797b7d;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.button:hover {
+  background-color: #f7f8fa;
+}
+

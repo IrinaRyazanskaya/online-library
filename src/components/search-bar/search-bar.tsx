@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 
+import "./search-bar.css";
+
 type SearchBarProps = {
   value: string;
   onChange: (value: string) => void;

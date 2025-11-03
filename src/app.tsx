@@ -15,13 +15,13 @@ function App() {
           <NavLink
             to="/"
             end
-            className={({ isActive }) => (isActive ? "nav__link nav__link--active" : "nav__link")}
+            className={({ isActive }) => (isActive ? "nav__link nav__link_active" : "nav__link")}
           >
             Каталог
           </NavLink>
           <NavLink
             to="/favorites"
-            className={({ isActive }) => (isActive ? "nav__link nav__link--active" : "nav__link")}
+            className={({ isActive }) => (isActive ? "nav__link nav__link_active" : "nav__link")}
           >
             Избранное
           </NavLink>

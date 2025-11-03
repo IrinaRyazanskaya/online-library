@@ -1,3 +1,5 @@
+import "./genre-filter.css";
+
 type GenreFilterProps = {
   value: string;
   options: string[];

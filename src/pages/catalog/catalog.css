@@ -1,0 +1,14 @@
+.catalog {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.catalog__title {
+  margin: 20px 0 0;
+}
+
+.toolbar {
+  display: flex;
+  gap: 14px;
+}

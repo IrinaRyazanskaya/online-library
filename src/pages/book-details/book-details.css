@@ -1,0 +1,13 @@
+.button_ghost {
+  width: 100px;
+  padding: 5px 14px;
+  text-decoration: none;
+  text-align: center;
+  color: #000;
+}
+
+.details__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}

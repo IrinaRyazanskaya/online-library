@@ -9,6 +9,8 @@ import { CardContainer } from "../../components/card-container";
 
 import booksJson from "../../data/books.json" with { type: "json" };
 
+import "./catalog.css";
+
 const books = booksJson as Book[];
 
 export function Catalog() {
@@ -74,8 +76,8 @@ export function Catalog() {
   );
 
   return (
-    <section>
-      <h2>Каталог книг</h2>
+    <section className="catalog">
+      <h2 className="catalog__title">Каталог книг</h2>
       <div className="toolbar">
         <SearchBar
           value={query}

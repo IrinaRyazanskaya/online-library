@@ -3,8 +3,11 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 
 import { useFavorites } from "../../hooks/use-favorites";
 import type { Book } from "../../types";
+import { formatYear } from "../../utils/formatYear";
 
 import booksJson from "../../data/books.json" with { type: "json" };
+
+import "./book-details.css";
 
 const books = booksJson as Book[];
 
@@ -36,25 +39,25 @@ export function BookDetails() {
   return (
     <article className="details">
       <header>
+        <Link className="button button_ghost" to="/" onClick={handleBackClick}>
+          Назад
+        </Link>
         <h2>{book.title}</h2>
-        <p className="muted">
-          {book.author} • {book.year} • {book.genre}
-        </p>
+        <div className="details__meta">
+          <span className="details__author">Автор: {book.author}</span>
+          <span className="details__year">Год: {formatYear(book.year)}</span>
+          <span className="details__genre">Жанр: {book.genre}</span>
+        </div>
       </header>
 
       <p>{book.description}</p>
 
-      <div className="details__actions">
-        <button
-          className={"button " + (hasFavorite(book.id) ? "button_secondary" : "button_primary")}
-          onClick={() => toggleFavorite(book.id)}
-        >
-          {hasFavorite(book.id) ? "Убрать из избранного" : "Добавить в избранное"}
-        </button>
-        <Link className="button button_ghost" to="/" onClick={handleBackClick}>
-          Назад
-        </Link>
-      </div>
+      <button
+        className={"button " + (hasFavorite(book.id) ? "button_secondary" : "button_primary")}
+        onClick={() => toggleFavorite(book.id)}
+      >
+        {hasFavorite(book.id) ? "Убрать из избранного" : "Добавить в избранное"}
+      </button>
     </article>
   );
 }
