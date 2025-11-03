@@ -1,10 +1,17 @@
+import { Route, Routes } from "react-router-dom";
+
 import { Catalog } from "./pages/catalog";
+import { Favorites } from "./pages/favorites";
 
 function App() {
   return (
     <main>
       <h1>Онлайн библиотека</h1>
-      <Catalog />
+      <Routes>
+        <Route path="/" element={<Catalog />} />
+        <Route path="/favorites" element={<Favorites />} />
+        <Route path="*" element={<p>Страница не найдена</p>} />
+      </Routes>
     </main>
   );
 }

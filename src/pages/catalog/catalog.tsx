@@ -1,11 +1,13 @@
 import { useCallback, useMemo } from "react";
 import { useSearchParams } from "react-router-dom";
+
 import type { Book } from "../../types";
-import booksJson from "../../data/books.json" with { type: "json" };
 import { useFavorites } from "../../hooks/use-favorites";
 import { SearchBar } from "../../components/search-bar";
 import { GenreFilter } from "../../components/genre-filter";
 import { CardContainer } from "../../components/card-container";
+
+import booksJson from "../../data/books.json" with { type: "json" };
 
 const books = booksJson as Book[];
 
