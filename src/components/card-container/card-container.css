@@ -4,3 +4,13 @@
   gap: 16px;
   justify-content: center;
 }
+
+.card-container_empty {
+  display: block;
+}
+
+.card-container__message {
+  margin: 40px 0;
+  color: #6b6b6b;
+  text-align: center;
+}

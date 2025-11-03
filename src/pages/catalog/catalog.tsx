@@ -78,7 +78,7 @@ export function Catalog() {
   return (
     <section className="catalog">
       <h2 className="catalog__title">Каталог книг</h2>
-      <div className="toolbar">
+      <div className="catalog__toolbar">
         <SearchBar
           value={query}
           onChange={handleQueryChange}

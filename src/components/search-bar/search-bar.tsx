@@ -16,7 +16,7 @@ export function SearchBar({ value, onChange, placeholder }: SearchBarProps) {
   return (
     <input
       aria-label="Поиск"
-      className="input"
+      className="search-bar"
       type="search"
       value={query}
       onChange={(evt) => setQuery(evt.target.value)}
