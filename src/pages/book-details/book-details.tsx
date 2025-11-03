@@ -40,7 +40,7 @@ export function BookDetails() {
     <article className="book-details">
       <header>
         <Link
-          className="button button_ghost book-details__back-link"
+          className="button button_secondary book-details__back-link"
           to="/"
           onClick={handleBackClick}
         >
@@ -57,7 +57,10 @@ export function BookDetails() {
       <p>{book.description}</p>
 
       <button
-        className={"button " + (hasFavorite(book.id) ? "button_secondary" : "button_primary")}
+        className={
+          "book-details__favorite button " +
+          (hasFavorite(book.id) ? "button_secondary" : "button_primary")
+        }
         onClick={() => toggleFavorite(book.id)}
       >
         {hasFavorite(book.id) ? "Убрать из избранного" : "Добавить в избранное"}

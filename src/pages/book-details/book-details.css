@@ -23,3 +23,7 @@
 .book-details__meta-item {
   color: #4b4c4c;
 }
+
+.book-details__favorite {
+  width: fit-content;
+}
