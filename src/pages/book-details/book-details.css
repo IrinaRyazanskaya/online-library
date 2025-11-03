@@ -1,9 +1,10 @@
 .button_ghost {
   width: 100px;
   padding: 5px 14px;
-  text-decoration: none;
-  text-align: center;
+
   color: #000;
+  text-align: center;
+  text-decoration: none;
 }
 
 .details__meta {

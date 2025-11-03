@@ -6,9 +6,15 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "lint": "eslint .",
+    "preview": "vite preview",
     "format": "prettier --write .",
-    "preview": "vite preview"
+    "format-check": "prettier --check .",
+    "lint": "npm run lint:ts && npm run lint:styles",
+    "lint:ts": "eslint .",
+    "lint:styles": "stylelint '**/*.css'",
+    "lint-fix": "npm run lint-fix:ts && npm run lint-fix:styles",
+    "lint-fix:ts": "eslint --fix .",
+    "lint-fix:styles": "stylelint --fix '**/*.css'"
   },
   "dependencies": {
     "react": "^19.1.1",
