@@ -11,7 +11,7 @@ export function useFavorites() {
 
   const hasFavorite = useCallback(
     (id: number) => {
-      favoriteIds.includes(id);
+      return favoriteIds.includes(id);
     },
     [favoriteIds],
   );
