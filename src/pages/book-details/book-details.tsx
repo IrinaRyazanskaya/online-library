@@ -1,5 +1,5 @@
-import { useMemo } from "react";
-import { Link, useParams } from "react-router-dom";
+import { type MouseEvent, useMemo } from "react";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 import { useFavorites } from "../../hooks/use-favorites";
 import type { Book } from "../../types";
@@ -10,12 +10,21 @@ const books = booksJson as Book[];
 
 export function BookDetails() {
   const { id } = useParams();
+  const navigate = useNavigate();
   const bookId = Number(id);
   const book = useMemo(() => {
     return books.find((book) => book.id === bookId);
   }, [bookId]);
 
   const { hasFavorite, toggleFavorite } = useFavorites();
+
+  const handleBackClick = (event: MouseEvent<HTMLAnchorElement>) => {
+    // Пользователь вошел не напрямую на book-details
+    if (window.history.state?.idx > 0) {
+      event.preventDefault();
+      navigate(-1);
+    }
+  };
 
   if (!book)
     return (
@@ -42,7 +51,7 @@ export function BookDetails() {
         >
           {hasFavorite(book.id) ? "Убрать из избранного" : "Добавить в избранное"}
         </button>
-        <Link className="button button_ghost" to="/">
+        <Link className="button button_ghost" to="/" onClick={handleBackClick}>
           Назад
         </Link>
       </div>
