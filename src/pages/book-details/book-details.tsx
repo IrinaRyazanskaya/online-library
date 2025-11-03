@@ -3,7 +3,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 
 import { useFavorites } from "../../hooks/use-favorites";
 import type { Book } from "../../types";
-import { formatYear } from "../../utils/formatYear";
+import { formatYear } from "../../utils/format-dates";
 
 import booksJson from "../../data/books.json" with { type: "json" };
 

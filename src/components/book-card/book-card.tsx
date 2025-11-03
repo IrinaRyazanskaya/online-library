@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 import type { Book } from "../../types";
-import { formatYear } from "../../utils/formatYear";
+import { formatYear } from "../../utils/format-dates";
 
 import "./book-card.css";
 
