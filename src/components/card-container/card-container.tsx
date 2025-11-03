@@ -10,7 +10,13 @@ type CardContainerProps = {
 };
 
 export function CardContainer({ books, favoriteIds, onToggleFavorite }: CardContainerProps) {
-  if (!books.length) return <p className="muted">Ничего не найдено.</p>;
+  if (!books.length) {
+    return (
+      <div className="card-container card-container_empty">
+        <p className="card-container__message">Ничего не найдено.</p>
+      </div>
+    );
+  }
 
   return (
     <div className="card-container">

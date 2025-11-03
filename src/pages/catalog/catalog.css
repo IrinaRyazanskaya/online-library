@@ -8,7 +8,7 @@
   margin: 20px 0 0;
 }
 
-.toolbar {
+.catalog__toolbar {
   display: flex;
   gap: 14px;
 }

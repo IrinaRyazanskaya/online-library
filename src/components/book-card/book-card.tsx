@@ -13,23 +13,23 @@ type BookCardProps = {
 
 export function BookCard({ book, isFavorite, onToggleFavorite }: BookCardProps) {
   return (
-    <article className="card">
-      <div className="card__content">
-        <header className="card__header">
-          <h3 className="card__title">
-            <Link className="card__link" to={`/book/${book.id}`}>
+    <article className="book-card">
+      <div className="book-card__content">
+        <header className="book-card__header">
+          <h3 className="book-card__title">
+            <Link className="book-card__link" to={`/book/${book.id}`}>
               {book.title}
             </Link>
           </h3>
-          <div className="card__meta">
-            <span className="meta__author">Автор: {book.author}</span>
-            <span className="meta__year">Год: {formatYear(book.year)}</span>
-            <span className="meta__genre">Жанр: {book.genre}</span>
+          <div className="book-card__meta">
+            <span className="book-card__meta-item">Автор: {book.author}</span>
+            <span className="book-card__meta-item">Год: {formatYear(book.year)}</span>
+            <span className="book-card__meta-item">Жанр: {book.genre}</span>
           </div>
         </header>
-        <p className="card__description">{book.description}</p>
+        <p className="book-card__description">{book.description}</p>
       </div>
-      <div className="card__actions">
+      <div className="book-card__actions">
         <button
           aria-pressed={isFavorite}
           className={"button " + (isFavorite ? "button_secondary" : "button_primary")}

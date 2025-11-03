@@ -37,16 +37,20 @@ export function BookDetails() {
     );
 
   return (
-    <article className="details">
+    <article className="book-details">
       <header>
-        <Link className="button button_ghost" to="/" onClick={handleBackClick}>
+        <Link
+          className="button button_ghost book-details__back-link"
+          to="/"
+          onClick={handleBackClick}
+        >
           Назад
         </Link>
         <h2>{book.title}</h2>
-        <div className="details__meta">
-          <span className="details__author">Автор: {book.author}</span>
-          <span className="details__year">Год: {formatYear(book.year)}</span>
-          <span className="details__genre">Жанр: {book.genre}</span>
+        <div className="book-details__meta">
+          <span className="book-details__meta-item">Автор: {book.author}</span>
+          <span className="book-details__meta-item">Год: {formatYear(book.year)}</span>
+          <span className="book-details__meta-item">Жанр: {book.genre}</span>
         </div>
       </header>
 

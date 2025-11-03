@@ -7,19 +7,23 @@ import { BookDetails } from "./pages/book-details";
 function App() {
   return (
     <div className="app">
-      <header className="header">
-        <h1 className="title">Онлайн‑библиотека</h1>
-        <nav className="nav">
+      <header className="app__header">
+        <h1 className="app__title">Онлайн‑библиотека</h1>
+        <nav className="app__nav">
           <NavLink
             to="/"
             end
-            className={({ isActive }) => (isActive ? "nav__link nav__link_active" : "nav__link")}
+            className={({ isActive }) =>
+              isActive ? "app__nav-link app__nav-link_active" : "app__nav-link"
+            }
           >
             Каталог
           </NavLink>
           <NavLink
             to="/favorites"
-            className={({ isActive }) => (isActive ? "nav__link nav__link_active" : "nav__link")}
+            className={({ isActive }) =>
+              isActive ? "app__nav-link app__nav-link_active" : "app__nav-link"
+            }
           >
             Избранное
           </NavLink>

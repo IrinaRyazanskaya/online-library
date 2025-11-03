@@ -1,4 +1,4 @@
-.input {
+.search-bar {
   width: 100%;
   max-width: 400px;
   padding: 10px;
@@ -16,16 +16,16 @@
     box-shadow 0.2s ease;
 }
 
-.input::placeholder {
+.search-bar::placeholder {
   color: #9a9a9a;
 }
 
-.input:focus {
+.search-bar:focus {
   border-color: #5a7dfa;
   outline: none;
   box-shadow: 0 0 0 3px rgb(90 125 250 / 12%);
 }
 
-.input:hover {
+.search-bar:hover {
   border-color: #b5b5b5;
 }

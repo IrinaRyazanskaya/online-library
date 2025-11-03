@@ -1,14 +1,25 @@
-.button_ghost {
-  width: 100px;
-  padding: 5px 14px;
+.book-details {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
 
-  color: #000;
-  text-align: center;
+.book-details__back-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100px;
+
   text-decoration: none;
 }
 
-.details__meta {
+.book-details__meta {
   display: flex;
   flex-direction: column;
   gap: 16px;
+}
+
+.book-details__meta-item {
+  color: #4b4c4c;
 }

@@ -10,7 +10,7 @@ export function GenreFilter({ value, options, onChange }: GenreFilterProps) {
   return (
     <select
       aria-label="Фильтр по жанру"
-      className="select"
+      className="genre-filter"
       value={value}
       onChange={(evt) => onChange(evt.target.value)}
     >
