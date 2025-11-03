@@ -1,6 +1,8 @@
 import type { Book } from "../../types";
 import { BookCard } from "../book-card";
 
+import "./card-container.css";
+
 type CardContainerProps = {
   books: Book[];
   favoriteIds: number[];
