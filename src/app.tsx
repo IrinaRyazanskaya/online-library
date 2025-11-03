@@ -8,9 +8,7 @@ function App() {
   return (
     <div className="app">
       <header className="header">
-        <h1 className="title">
-          Онлайн‑библиотека
-        </h1>
+        <h1 className="title">Онлайн‑библиотека</h1>
         <nav className="nav">
           <NavLink
             to="/"

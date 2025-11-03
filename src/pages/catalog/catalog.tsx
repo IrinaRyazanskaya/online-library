@@ -84,11 +84,7 @@ export function Catalog() {
           onChange={handleQueryChange}
           placeholder="Введите название или автора"
         />
-        <GenreFilter
-          value={genre}
-          options={genres}
-          onChange={handleGenreChange}
-        />
+        <GenreFilter value={genre} options={genres} onChange={handleGenreChange} />
       </div>
       <CardContainer
         books={filteredBooks}

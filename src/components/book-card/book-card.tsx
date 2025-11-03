@@ -17,7 +17,9 @@ export function BookCard({ book, isFavorite, onToggleFavorite }: BookCardProps) 
       <div className="card__content">
         <header className="card__header">
           <h3 className="card__title">
-            <Link className="card__link" to={`/book/${book.id}`}>{book.title}</Link>
+            <Link className="card__link" to={`/book/${book.id}`}>
+              {book.title}
+            </Link>
           </h3>
           <div className="card__meta">
             <span className="meta__author">Автор: {book.author}</span>
