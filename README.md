@@ -1,83 +1,116 @@
-# React + TypeScript + Vite
+# Виртуальная книжная полка 📚
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Веб-приложение для удобного поиска и изучения книг с возможностью сохранять их в избранное.
 
-Currently, two official plugins are available:
+## ✨ Ключевые возможности
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react)
-  uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in
-  [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc)
-  uses [SWC](https://swc.rs/) for Fast Refresh
+- 🔎 Поиск книг по названию и автору с моментальным обновлением списка.
+- 🎯 Фильтрация каталога по жанрам без перезагрузки страницы.
+- 💾 Сохранение избранных книг в `localStorage`, чтобы подборки не терялись между посещениями.
+- 📖 Отдельная страница с подробным описанием и ключевыми метаданными книги.
+- 🔗 Синхронизация фильтров и поиска с адресной строкой для удобного обмена ссылками.
 
-## React Compiler
+## 🛠️ Технологический стек
 
-The React Compiler is not enabled on this template because of its impact on dev & build
-performances. To add it, see
-[this documentation](https://react.dev/learn/react-compiler/installation).
+- **Frontend:** React, TypeScript, React Router
+- **Инструменты сборки:** Node.js, NPM, Vite
+- **UI и стиль:** CSS, Flexbox, CSS Grid, кастомные контролы, система классов по БЭМ
+- **Данные и состояние:** локальный JSON-каталог книг, пользовательские React hooks, `localStorage`
+- **Качество кода:** форматирование через Prettier, статический анализ ESLint и Stylelint
 
-## Expanding the ESLint configuration
+## 🚀 Установка и запуск
 
-If you are developing a production application, we recommend updating the configuration to enable
-type-aware lint rules:
+1. Установите Node.js версии 22 или новее.
+2. Склонируйте репозиторий и перейдите в директорию проекта:
 
-```js
-export default defineConfig([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
+   ```bash
+   git clone https://github.com/IrinaRyazanskaya/online-library.git
+   cd online-library
+   ```
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+3. Установите зависимости:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+   ```bash
+   npm install
+   ```
+
+4. Запустите проект в режиме разработки:
+
+   ```bash
+   npm run dev
+   ```
+
+   По умолчанию приложение будет доступно на http://localhost:5173.
+
+5. Соберите production-версию:
+
+   ```bash
+   npm run build
+   ```
+
+6. Просмотрите собранный билд локально:
+
+   ```bash
+   npm run preview
+   ```
+
+7. Дополнительные команды для поддержания качества кода:
+
+   ```bash
+   npm run format          # Автоформатирование с помощью Prettier
+   npm run lint            # Комплексная проверка линтерами
+   npm run lint:ts         # Проверка кода линтером ESLint
+   npm run lint:styles     # Проверка стилей линтером Stylelint
+   npm run lint-fix        # Автоматическое исправление ошибок линтинга
+   npm run lint-fix:ts     # Автоисправление замечаний ESLint
+   npm run lint-fix:styles # Автоисправление замечаний Stylelint
+   ```
+
+## 📁 Структура проекта
+
+```text
+online-library/
+├── src/
+│   ├── app.tsx                # Корневой компонент с маршрутизацией и навигацией
+│   ├── main.tsx               # Точка входа и инициализация React Router
+│   ├── pages/
+│   │   ├── catalog/           # Каталог книг с поиском и фильтрами
+│   │   ├── favorites/         # Страница избранного с сохранением состояния
+│   │   └── book-details/      # Детальная карточка книги и управление избранным
+│   ├── components/            # Переиспользуемые элементы интерфейса (поиск, фильтр, карточки)
+│   ├── hooks/use-favorites.ts # Пользовательский хук с логикой работы с localStorage
+│   ├── data/books.json        # Демонстрационный набор данных по книгам
+│   ├── utils/                 # Утилиты форматирования и хранения данных
+│   └── index.css              # Базовые стили и общие классы кнопок
+├── public/                    # Статические ресурсы, доступные напрямую
+├── package.json               # Скрипты, зависимости и метаданные проекта
+├── vite.config.ts             # Настройки сборщика Vite
+├── tsconfig.json              # Настройки TypeScript
+├── tsconfig.app.json          # Настройки TypeScript для фронтенда
+├── tsconfig.node.json         # Настройки TypeScript для конфигов
+├── eslint.config.mjs          # Правила линтинга JS/TS
+├── .editorconfig              # Единые правила оформления кода
+├── .gitignore                 # Игнорируемые Git-ом файлы
+├── .prettierignore            # Исключения для Prettier
+├── .prettierrc.json           # Конфигурация Prettier
+├── .stylelintrc.json          # Правила линтинга стилей
+└── .prettierrc.json           # Настройки автоформатирования
 ```
 
-You can also install
-[eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x)
-and
-[eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom)
-for React-specific lint rules:
+## 💡 Что реализовано и изучено
 
-```js
-// eslint.config.js
-import reactX from "eslint-plugin-react-x";
-import reactDom from "eslint-plugin-react-dom";
+- Отработаны навыки типизации на TypeScript, включая работу с JSON-модулями.
+- Применены современные подходы React с функциональными компонентами и hooks.
+- Настроена навигация на базе React Router DOM с несколькими маршрутами и страницей 404.
+- Реализован пользовательский хук для управления избранным и синхронизации с `localStorage`.
+- Разработана адаптивная сетка карточек и взаимодействие с формами без сторонних UI-библиотек.
+- Настроены инструменты контроля качества кода: ESLint, Stylelint, Prettier, различные npm-скрипты.
 
-export default defineConfig([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs["recommended-typescript"],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
-```
+## 📚 Решенные проблемы и технические челленджи
+
+- **Сохранность пользовательских данных:** обработаны ошибки доступа к `localStorage`, чтобы
+  приложение работало даже в приватном режиме браузера.
+- **Удобный поиск:** синхронизация строки запроса и жанра с URL через `useSearchParams`, что
+  облегчает передачу ссылок и повтор входа на страницу.
+- **Масштабируемая структура:** модульная организация `pages`, `components`, `hooks` помогает быстро
+  наращивать функциональность без путаницы.
